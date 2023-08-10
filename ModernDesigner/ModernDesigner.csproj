@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4AB0E3D2-3939-4CD5-A8EE-8FFECC570516}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ModernDesigner</RootNamespace>
+    <AssemblyName>ModernDesigner</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\ScreenDesigner\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\ScreenDesigner\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractService.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Controls\DesignerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyboxControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ToolboxControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Toolbox\IToolbox.cs" />
+    <Compile Include="Controls\Toolbox\ToolboxBaseItem.cs" />
+    <Compile Include="Controls\Toolbox\ToolboxCategoryCollection.cs" />
+    <Compile Include="Controls\Toolbox\ToolboxCategoryItem.cs" />
+    <Compile Include="Controls\Toolbox\ToolboxCategoryState.cs" />
+    <Compile Include="Controls\Toolbox\ToolboxItemDragEventArgs.cs" />
+    <Compile Include="Controls\Toolbox\ToolboxItemUsedArgs.cs" />
+    <Compile Include="Controls\Toolbox\ToolboxListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Toolbox\ToolboxPointerItem.cs" />
+    <Compile Include="Controls\Toolbox\ToolboxService.cs" />
+    <Compile Include="Designer\AddingVerbEventArgs.cs" />
+    <Compile Include="Designer\AlignType.cs" />
+    <Compile Include="Designer\DefaultDesignerTransaction.cs" />
+    <Compile Include="Designer\Designer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Designer\DesignerHost.cs" />
+    <Compile Include="Designer\FilterEventArgs.cs" />
+    <Compile Include="Designer\Internal\DesignerActions\AddAction.cs" />
+    <Compile Include="Designer\Internal\DesignerActions\ChangeAction.cs" />
+    <Compile Include="Designer\Internal\DesignerActions\DesignerAction.cs" />
+    <Compile Include="Designer\Internal\DesignerActions\MegaAction.cs" />
+    <Compile Include="Designer\Internal\DesignerActions\RemoveAction.cs" />
+    <Compile Include="Designer\Internal\DesignerSite.cs" />
+    <Compile Include="Designer\Internal\DesignSurface.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Internal\ExtenderProvidedProperty.cs" />
+    <Compile Include="Designer\Internal\NestedContainer.cs" />
+    <Compile Include="Designer\Internal\RootDesigner.cs" />
+    <Compile Include="Designer\ResizeType.cs" />
+    <Compile Include="Designer\Serialization\BinarySerializationAttribute.cs" />
+    <Compile Include="Designer\Serialization\DefaultDesignerLoader.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Designer\Serialization\IDesignerLoader.cs" />
+    <Compile Include="Designer\Serialization\Internal\ComponentProperty.cs" />
+    <Compile Include="Designer\Serialization\Internal\Extender.cs" />
+    <Compile Include="Designer\Serialization\Internal\InstanceDescriptorLoader.cs" />
+    <Compile Include="Designer\Serialization\Internal\ReferencedCollection.cs" />
+    <Compile Include="Designer\Serialization\Internal\ReferencedItem.cs" />
+    <Compile Include="Designer\Serialization\LoadModes.cs" />
+    <Compile Include="Designer\Serialization\Reader\IReader.cs" />
+    <Compile Include="Designer\Serialization\Reader\ReaderBase.cs" />
+    <Compile Include="Designer\Serialization\Reader\ReaderState.cs" />
+    <Compile Include="Designer\Serialization\Reader\XmlFormReader.cs" />
+    <Compile Include="Designer\Serialization\StoreEventArgs.cs" />
+    <Compile Include="Designer\Serialization\Writer\IWriter.cs" />
+    <Compile Include="Designer\Serialization\Writer\XmlFormWriter.cs" />
+    <Compile Include="Designer\Services\BaseEventBindingService.cs" />
+    <Compile Include="Designer\Services\ContainerService.cs" />
+    <Compile Include="Designer\Services\DefaultDesignerOptionService.cs" />
+    <Compile Include="Designer\Services\DefaultEventBindingService.cs" />
+    <Compile Include="Designer\Services\DefaultMenuCommandService.cs" />
+    <Compile Include="Designer\Services\DictionaryService.cs" />
+    <Compile Include="Designer\Services\EventService.cs" />
+    <Compile Include="Designer\Services\NameCreationService.cs" />
+    <Compile Include="Designer\Services\SelectionService.cs" />
+    <Compile Include="Designer\Services\TypeDescriptorFilterService.cs" />
+    <Compile Include="Designer\Services\TypeDiscoveryService.cs" />
+    <Compile Include="Designer\Services\TypeResolutionService.cs" />
+    <Compile Include="Disposable.cs" />
+    <Compile Include="Extensions\ControlExtensions.cs" />
+    <Compile Include="Extensions\IDesignerHostExtensions.cs" />
+    <Compile Include="Extensions\IServiceProviderExtensions.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="Extensions\PointExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\TypeConverterExtensions.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\DesignerControl.resx">
+      <DependentUpon>DesignerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PropertyboxControl.resx">
+      <DependentUpon>PropertyboxControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ToolboxControl.resx">
+      <DependentUpon>ToolboxControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
